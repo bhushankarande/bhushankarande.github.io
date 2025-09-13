@@ -1,12 +1,26 @@
-/* Split layout: copy | photo */
-.about-split{
-  display:grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap:2rem;
-  align-items:center;
+/* =========================
+   ABOUT PAGE — POLISHED
+   ========================= */
+
+/* Optional container tuning (PaperMod wraps content in .post-content) */
+.post-content .about-split{
+  margin-top: .25rem;            /* tuck the hero up a bit */
 }
 
-/* Name */
+/* Keep the split layout you liked */
+.about-split{
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* Constrain copy for comfortable reading */
+.about-copy{
+  max-width: 60ch;               /* ~60 characters per line */
+}
+
+/* Name (kept in case you ever bring it back) */
 .about-name{
   font-size: clamp(1.9rem, 3.6vw, 2.4rem);
   font-weight: 800;
@@ -20,57 +34,120 @@
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }
 
-/* Body text */
-.about-copy p{ margin:.7rem 0; font-size:1rem; }
+/* Body copy */
+.about-copy p{
+  margin: .7rem 0;
+  font-size: 1rem;               /* calmer than default */
+}
 
 /* Icons row */
-.about-icons{ display:flex; gap:1rem; margin:1rem 0 .35rem; }
-.about-icons .icon{
-  display:inline-flex; align-items:center; justify-content:center;
-  width:62px; height:62px; border-radius:16px;
-  background: var(--entry); color: var(--primary);
-  box-shadow: var(--shadow-l1);
-  transition: transform .12s ease, box-shadow .12s ease;
+.about-icons{
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0 .35rem;
 }
-.about-icons .icon:hover{ transform: translateY(-2px); box-shadow: var(--shadow-l2); }
-.about-reach{ font-size:.9rem; color:var(--secondary); }
+
+.about-icons .icon{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 62px; height: 62px;
+  border-radius: 16px;
+  background: var(--entry);
+  color: var(--primary);
+  box-shadow: var(--shadow-l1);
+  transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+}
+.about-icons .icon:hover{
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-l2);
+  background: color-mix(in srgb, var(--entry) 88%, var(--primary) 12%);
+}
+.about-icons .icon svg{ display:block; }
+
+/* Keyboard focus */
+.about-icons .icon:focus-visible{
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  transform: translateY(-2px);
+}
+
+/* Subtle note under icons */
+.about-reach{
+  font-size: .9rem;
+  color: var(--secondary);
+}
 
 /* Photo */
 .about-photo{ display:flex; justify-content:center; }
 .about-photo img{
-  width: min(280px, 40vw); aspect-ratio:1/1; border-radius:50%; object-fit:cover;
+  width: min(280px, 40vw);
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  object-fit: cover;
   box-shadow: 0 8px 26px rgba(0,0,0,.34);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.about-photo img:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 10px 32px rgba(0,0,0,.38);
 }
 
-/* Footer */
+/* Footer line on the page body */
 .about-foot{
-  margin-top: 1.4rem; color: var(--secondary); font-size: .9rem;
-  text-align: center; border-top: 1px solid rgba(255,255,255,.08); padding-top: .9rem;
+  margin-top: 1.4rem;
+  color: var(--secondary);
+  font-size: .9rem;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,.08);
+  padding-top: .9rem;
 }
 
-/* Responsive */
+/* -------------------------
+   RESPONSIVE
+   ------------------------- */
+@media (max-width: 1200px){
+  .about-split{ gap: 1.6rem; }
+}
+
 @media (max-width: 980px){
-  .about-split{ grid-template-columns: 1fr; gap:1.25rem; }
-  .about-photo{ order:-1; }
+  .about-split{
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .about-photo{ order: -1; }                 /* put photo first on mobile */
   .about-photo img{ width: min(220px, 65vw); }
-  .about-copy p{ font-size:.98rem; }
+  .about-copy p{ font-size: .98rem; }
+  .about-icons .icon{ width: 56px; height: 56px; border-radius: 14px; }
 }
 
-/* Hide Hugo/PaperMod auto page title only on the About page */
-/* 1) Theme/site may add a `page-about` class to <body> */
+/* Reduce motion for those who prefer it */
+@media (prefers-reduced-motion: reduce){
+  .about-icons .icon,
+  .about-photo img{
+    transition: none !important;
+  }
+}
+
+/* -------------------------
+   HIDE THE AUTO PAGE TITLE
+   (Your robust selectors, kept and grouped)
+   ------------------------- */
+
+/* 1) Theme/site may add `page-about` to <body> */
 body.page-about .post-title,
-body.page-about .single-title {
+body.page-about .single-title{
   display: none !important;
 }
 
-/* 2) Robust: match by canonical URL (works in all modern browsers) */
+/* 2) Match by canonical URL (broad browser support now) */
 html:has(head link[rel="canonical"][href$="/about/"]) .post-title,
-html:has(head link[rel="canonical"][href$="/about/"]) .single-title {
+html:has(head link[rel="canonical"][href$="/about/"]) .single-title{
   display: none !important;
 }
 
-/* 3) Extra safety: match by OpenGraph URL */
+/* 3) Extra safety: OpenGraph URL */
 html:has(head meta[property="og:url"][content$="/about/"]) .post-title,
-html:has(head meta[property="og:url"][content$="/about/"]) .single-title {
+html:has(head meta[property="og:url"][content$="/about/"]) .single-title{
   display: none !important;
 }
