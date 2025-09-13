@@ -18,7 +18,7 @@ disableShare: true
   </a>
 
   <!-- Notion DB: Resources available -->
-  <a class="link-card" href="https://www.notion.so/86d65d984d7f4fd0af0e3eba49c13c03?v=b2e7b48fd5224d288125b7624e38139d&source=copy_link" target="_blank" rel="noopener">
+  <a class="link-card" href="https://gilded-forger-08f.notion.site/86d65d984d7f4fd0af0e3eba49c13c03?v=b2e7b48fd5224d288125b7624e38139d" target="_blank" rel="noopener">
     <div class="link-icon notion" aria-hidden="true">🗒️</div>
     <div class="link-meta">
       <div class="link-title">Resources available</div>
