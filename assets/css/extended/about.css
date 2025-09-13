@@ -55,3 +55,22 @@
   .about-photo img{ width: min(220px, 65vw); }
   .about-copy p{ font-size:.98rem; }
 }
+
+/* Hide Hugo/PaperMod auto page title only on the About page */
+/* 1) Theme/site may add a `page-about` class to <body> */
+body.page-about .post-title,
+body.page-about .single-title {
+  display: none !important;
+}
+
+/* 2) Robust: match by canonical URL (works in all modern browsers) */
+html:has(head link[rel="canonical"][href$="/about/"]) .post-title,
+html:has(head link[rel="canonical"][href$="/about/"]) .single-title {
+  display: none !important;
+}
+
+/* 3) Extra safety: match by OpenGraph URL */
+html:has(head meta[property="og:url"][content$="/about/"]) .post-title,
+html:has(head meta[property="og:url"][content$="/about/"]) .single-title {
+  display: none !important;
+}

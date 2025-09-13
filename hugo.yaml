@@ -17,3 +17,9 @@ menu:
       name: "Notes"
       url: "/notes/"
       weight: 30
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+      
