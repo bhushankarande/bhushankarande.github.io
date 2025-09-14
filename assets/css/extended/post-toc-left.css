@@ -1,0 +1,23 @@
+/* Move PaperMod post TOC to the left and make it sticky */
+.post-toc {
+  order: -1;                 /* put TOC before content in flex flow */
+  position: sticky;
+  top: 6.5rem;               /* space below header */
+  align-self: flex-start;
+  max-height: calc(100vh - 7.5rem);
+  overflow: auto;
+  padding-right: 1rem;
+}
+
+/* On wide screens, give the TOC a narrow column feel */
+.single .main {
+  display: grid;
+  grid-template-columns: 260px 1fr;  /* left rail + content */
+  gap: 2rem;
+}
+
+/* Mobile: fall back to default (TOC stacked) */
+@media (max-width: 1100px){
+  .single .main { display: block; }
+  .post-toc { position: static; max-height: none; padding-right: 0; }
+}
