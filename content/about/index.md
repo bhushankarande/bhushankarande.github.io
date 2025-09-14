@@ -1,5 +1,4 @@
----
-title: "about"
+title: "About"
 draft: false
 showDate: false
 showReadingTime: false
