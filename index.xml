@@ -1,9 +1,32 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Bhushan Karande</title><link>https://bhushankarande.github.io/</link><description>Recent content on Bhushan Karande</description><generator>Hugo -- 0.150.0</generator><language>en-us</language><atom:link href="https://bhushankarande.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://bhushankarande.github.io/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://bhushankarande.github.io/about/</guid><description>&lt;h2 id="disableshare-true"&gt;title: &amp;ldquo;About&amp;rdquo;
-draft: false
-showDate: false
-showReadingTime: false
-disableShare: true&lt;/h2&gt;
-&lt;div class="about-split"&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Bhushan Karande</title><link>https://bhushankarande.github.io/</link><description>Recent content on Bhushan Karande</description><generator>Hugo -- 0.150.0</generator><language>en-us</language><lastBuildDate>Fri, 12 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://bhushankarande.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Deep Dive into &lt;Topic&gt;</title><link>https://bhushankarande.github.io/blog/deep-dive-template/</link><pubDate>Fri, 12 Sep 2025 00:00:00 +0000</pubDate><guid>https://bhushankarande.github.io/blog/deep-dive-template/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt; — One or two crisp sentences summarizing the key idea and why it matters.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id="relevant-links"&gt;Relevant Links&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://example.com/paper" target="_blank" rel="noopener"&gt;Original paper&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://example.com/talk" target="_blank" rel="noopener"&gt;Author talk&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#world-model"&gt;Jump to World Model&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="problems-with-current-approach"&gt;Problems with Current Approach&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Brief bullet points on what’s broken today.&lt;/li&gt;
+&lt;li&gt;What signals we’re missing, or why optimization is misaligned.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="common-sense"&gt;Common Sense&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;A couple lines, then sub-sections.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="how-humans-learn"&gt;How Humans Learn&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Short paragraph with a link to a study.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="learning-to-think"&gt;Learning to Think&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Another short paragraph.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="modality"&gt;Modality&lt;/h2&gt;
+&lt;p&gt;Quick overview of modality coverage (vision, audio, language), and why this matters for your topic.&lt;/p&gt;</description></item><item><title>About</title><link>https://bhushankarande.github.io/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://bhushankarande.github.io/about/</guid><description>&lt;div class="about-split"&gt;
 &lt;div class="about-copy"&gt;
 &lt;p&gt;I’m a Machine Learning Engineer focused on production ML, data engineering, and applied AI research. I like turning messy, real-world problems into simple, reliable systems.&lt;/p&gt;
 &lt;p&gt;My goal with this site is to write clearly about the parts of ML that actually matter in practice. I dig into papers and implementations, chase the small details that change results, and share what I learn in plain language. Writing forces understanding; it’s how I stress-test ideas and make them useful.&lt;/p&gt;</description></item><item><title>Notes</title><link>https://bhushankarande.github.io/notes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://bhushankarande.github.io/notes/</guid><description>&lt;div class="links-grid"&gt;
