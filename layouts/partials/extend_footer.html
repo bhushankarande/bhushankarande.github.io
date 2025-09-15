@@ -1,0 +1,10 @@
+{{/* Custom footer injections */}}
+{{- if in .Permalink "/blog/" -}}
+  {{- $spy := resources.Get "js/toc-spy.js" | resources.Minify -}}
+  {{- if not site.Params.assets.disableFingerprinting -}}
+    {{- $spy = $spy | fingerprint -}}
+    <script defer src="{{ $spy.RelPermalink }}" integrity="{{ $spy.Data.Integrity }}" crossorigin="anonymous"></script>
+  {{- else -}}
+    <script defer src="{{ $spy.RelPermalink }}" crossorigin="anonymous"></script>
+  {{- end -}}
+{{- end -}}

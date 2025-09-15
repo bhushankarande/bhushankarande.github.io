@@ -1,23 +1,48 @@
-/* Move PaperMod post TOC to the left and make it sticky */
-.post-toc {
-  order: -1;                 /* put TOC before content in flex flow */
+/* Left-rail TOC for blog posts (no template change needed) */
+
+/* 1) Turn the single post article into a two-column grid */
+html:has(head link[rel="canonical"][href*="/blog/"]) article.post-single {
+  display: grid;
+  grid-template-columns: 200px 1fr; /* slimmer TOC column */
+  gap: 2rem;
+  align-items: start;
+}
+
+/* 2) Make header/cover/footer span full width */
+html:has(head link[rel="canonical"][href*="/blog/"]) article.post-single > .post-header,
+html:has(head link[rel="canonical"][href*="/blog/"]) article.post-single > .entry-cover,
+html:has(head link[rel="canonical"][href*="/blog/"]) article.post-single > .post-footer {
+  grid-column: 1 / -1;
+}
+
+/* 3) Place TOC in the left rail and make it sticky */
+html:has(head link[rel="canonical"][href*="/blog/"]) article.post-single > .toc {
+  grid-column: 1;
   position: sticky;
-  top: 6.5rem;               /* space below header */
-  align-self: flex-start;
+  top: 6.5rem;
+  align-self: start;
   max-height: calc(100vh - 7.5rem);
   overflow: auto;
-  padding-right: 1rem;
+  font-size: 0.9rem;   /* smaller text in TOC */
 }
 
-/* On wide screens, give the TOC a narrow column feel */
-.single .main {
-  display: grid;
-  grid-template-columns: 260px 1fr;  /* left rail + content */
-  gap: 2rem;
+/* 4) Content uses the right column */
+html:has(head link[rel="canonical"][href*="/blog/"]) article.post-single > .post-content {
+  grid-column: 2;
 }
 
-/* Mobile: fall back to default (TOC stacked) */
+/* 5) Mobile: fall back to stacked layout */
 @media (max-width: 1100px){
-  .single .main { display: block; }
-  .post-toc { position: static; max-height: none; padding-right: 0; }
+  html:has(head link[rel="canonical"][href*="/blog/"]) article.post-single {
+    display: block;
+  }
+  html:has(head link[rel="canonical"][href*="/blog/"]) article.post-single > .toc {
+    position: static;
+    max-height: none;
+  }
+}
+
+/* Widen overall container only for blog posts to center content */
+html:has(head link[rel="canonical"][href*="/blog/"]) .main {
+  max-width: 1200px; /* wider reading column with left rail */
 }

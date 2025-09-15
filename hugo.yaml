@@ -3,6 +3,14 @@ languageCode: "en-us"
 title: "Bhushan Karande"
 theme: "PaperMod"
 
+params:
+  # Do not show any sections on the home page list.
+  # This keeps blog posts off the default landing page.
+  mainSections: []
+  # Optional: tidy breadcrumbs and reading experience defaults
+  ShowBreadCrumbs: true
+  ShowReadingTime: true
+
 menu:
   main:
     - identifier: about

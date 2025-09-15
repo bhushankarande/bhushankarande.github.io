@@ -1,0 +1,92 @@
+/* Blog section refinements (list and single) */
+
+/* Hide the "Blog" H1 on the section page only */
+html:has(head link[rel="canonical"][href$="/blog/"]) .page-header { display: none !important; }
+
+/* Post cards: cleaner, subtle hover */
+.list .post-entry,
+.list .first-entry {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  transition: transform .12s ease, box-shadow .12s ease, background .2s ease;
+  background: var(--entry);
+}
+
+.list .post-entry:hover,
+.list .first-entry:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,.12);
+}
+
+.list .entry-header h2 {
+  font-size: 1.35rem;
+  line-height: 1.4;
+}
+
+.list .entry-content p { color: var(--secondary); }
+.list .entry-footer { color: var(--secondary); }
+
+/* Single posts: breathe a little */
+.single .post-title,
+.single .single-title {
+  font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+  line-height: 1.2;
+  margin-bottom: .5rem;
+}
+
+.single .post-meta { color: var(--secondary); }
+
+/* Blog post typography: slightly smaller, comfy line-height */
+html:has(head link[rel="canonical"][href*="/blog/"]) .post-content {
+  font-size: 0.95rem;   /* slightly smaller body text */
+  line-height: 1.72;    /* a touch more breathing room */
+}
+
+html:has(head link[rel="canonical"][href*="/blog/"]) .post-content h2 { font-size: 1.5rem; }
+html:has(head link[rel="canonical"][href*="/blog/"]) .post-content h3 { font-size: 1.2rem; }
+html:has(head link[rel="canonical"][href*="/blog/"]) .post-content h4 { font-size: 1.02rem; }
+
+/* Compact TOC list spacing for a cleaner look */
+html:has(head link[rel="canonical"][href*="/blog/"]) .toc .inner { margin: 4px 12px 0; }
+html:has(head link[rel="canonical"][href*="/blog/"]) .toc li { margin: 2px 0; }
+
+/* TOC: one-line items with ellipsis */
+html:has(head link[rel="canonical"][href*="/blog/"]) .toc a {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  padding: 6px 8px;
+  border-radius: 8px;
+  box-shadow: none; /* override theme's hover underline */
+}
+
+/* Remove bullets and tighten indentation */
+html:has(head link[rel="canonical"][href*="/blog/"]) .toc ul { list-style: none; padding-inline-start: 0; }
+html:has(head link[rel="canonical"][href*="/blog/"]) .toc li ul { margin-inline-start: 14px; }
+
+/* Hide the "Table of Contents" label */
+html:has(head link[rel="canonical"][href*="/blog/"]) .toc details summary { display: none; }
+
+/* Collapse sub-lists by default; expand when the parent has .is-open */
+html:has(head link[rel="canonical"][href*="/blog/"]) .toc li > ul { display: none; }
+html:has(head link[rel="canonical"][href*="/blog/"]) .toc li.is-open > ul { display: block; }
+
+/* Optional: subtle guide line for top-level groups */
+html:has(head link[rel="canonical"][href*="/blog/"]) .toc > details > .inner > ul > li { padding-left: .2rem; border-left: 2px solid transparent; }
+html:has(head link[rel="canonical"][href*="/blog/"]) .toc > details > .inner > ul > li:focus-within { border-left-color: var(--tertiary); }
+
+/* Active item highlight: faint white rectangle */
+html:has(head link[rel="canonical"][href*="/blog/"]) .toc a.is-active {
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+/* Minimal container — remove rectangle look */
+html:has(head link[rel="canonical"][href*="/blog/"]) .toc { background: transparent; border: 0; padding: 0; }
+html:has(head link[rel="canonical"][href*="/blog/"]) .dark .toc { background: transparent; }
+
+/* Optional: hover underline for clarity */
+html:has(head link[rel="canonical"][href*="/blog/"]) .toc a:hover { text-decoration: underline; text-underline-offset: 3px; }

@@ -4,6 +4,7 @@ draft: false
 showDate: false
 showReadingTime: false
 disableShare: true
+ShowBreadCrumbs: false
 ---
 
 <div class="about-split">
