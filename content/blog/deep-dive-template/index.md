@@ -6,6 +6,7 @@ draft: false
 # PaperMod options
 ShowToc: true         # show Table of Contents
 TocOpen: true         # open TOC by default
+UseHugoToc: true      # use Hugo's built-in nested TOC
 hideSummary: true
 showReadingTime: true
 showPostNavLinks: true
@@ -139,4 +140,3 @@ Footnote example[^cite].
 [^cite]: Cite the talk/paper/etc. in a footnote—clean and unobtrusive.
 
 > Replace titles/links with your content; keep the headings so the TOC mirrors the left rail in your screenshot.
-

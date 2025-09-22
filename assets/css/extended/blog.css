@@ -70,8 +70,17 @@ html:has(head link[rel="canonical"][href*="/blog/"]) .toc li ul { margin-inline-
 html:has(head link[rel="canonical"][href*="/blog/"]) .toc details summary { display: none; }
 
 /* Collapse sub-lists by default; expand when the parent has .is-open */
+/* Collapse nested lists by default, regardless of structure quirks */
+html:has(head link[rel="canonical"][href*="/blog/"]) .toc .inner ul ul { display: none; }
 html:has(head link[rel="canonical"][href*="/blog/"]) .toc li > ul { display: none; }
+html:has(head link[rel="canonical"][href*="/blog/"]) .toc li + ul { display: none; }
+
+/* Show nested lists when parent li is marked open (handles child or following-sibling UL) */
+/* When a list item is open, show all its descendant lists regardless of structure */
 html:has(head link[rel="canonical"][href*="/blog/"]) .toc li.is-open > ul { display: block; }
+html:has(head link[rel="canonical"][href*="/blog/"]) .toc li.is-open + ul { display: block; }
+html:has(head link[rel="canonical"][href*="/blog/"]) .toc li.is-open > ul ul { display: block; }
+html:has(head link[rel="canonical"][href*="/blog/"]) .toc li.is-open + ul ul { display: block; }
 
 /* Optional: subtle guide line for top-level groups */
 html:has(head link[rel="canonical"][href*="/blog/"]) .toc > details > .inner > ul > li { padding-left: .2rem; border-left: 2px solid transparent; }
@@ -85,8 +94,7 @@ html:has(head link[rel="canonical"][href*="/blog/"]) .toc a.is-active {
 }
 
 /* Minimal container — remove rectangle look */
-html:has(head link[rel="canonical"][href*="/blog/"]) .toc { background: transparent; border: 0; padding: 0; }
-html:has(head link[rel="canonical"][href*="/blog/"]) .dark .toc { background: transparent; }
+html:has(head link[rel="canonical"][href*="/blog/"]) .toc { background: transparent !important; border: 0 !important; padding: 0; box-shadow: none !important; }
 
 /* Optional: hover underline for clarity */
 html:has(head link[rel="canonical"][href*="/blog/"]) .toc a:hover { text-decoration: underline; text-underline-offset: 3px; }

@@ -21,26 +21,41 @@
     byId.set(id, a);
   });
 
-  const root = toc.querySelector('.inner > ul');
-  const clearOpen = () => { if (!root) return; root.querySelectorAll('li').forEach(li => li.classList.remove('is-open')); };
-  const openPath = (li) => {
+  const root = toc.querySelector('.inner > ul') || toc.querySelector('.inner ul');
+  const clearActive = () => anchors.forEach(a => a.classList.remove('is-active'));
+  const markActive = (a) => { clearActive(); a.classList.add('is-active'); };
+
+  // Prepare: collapse all nested ULs (not the root)
+  const allSubUls = root ? Array.from(root.querySelectorAll('ul')) : [];
+  const hideAll = () => allSubUls.forEach(u => u.style.display = 'none');
+  hideAll();
+  const showForLi = (li) => {
     if (!li) return;
-    clearOpen();
+    // collapse everything
+    hideAll();
+    if (root) root.querySelectorAll('li').forEach(n => n.classList.remove('is-open'));
+
+    // open descendants of clicked li
+    li.classList.add('is-open');
+    li.querySelectorAll('ul').forEach(u => u.style.display = 'block');
+    // open ancestor chain
     let cur = li;
     while (cur && cur !== root) {
       cur.classList.add('is-open');
+      const cu = cur.querySelector(':scope > ul');
+      if (cu) cu.style.display = 'block';
+      const sib = cur.nextElementSibling;
+      if (sib && sib.tagName === 'UL') sib.style.display = 'block';
       cur = cur.parentElement && cur.parentElement.closest('li');
     }
   };
-  const clearActive = () => anchors.forEach(a => a.classList.remove('is-active'));
-  const markActive = (a) => { clearActive(); a.classList.add('is-active'); };
 
   // 1) Initial state: if URL has hash, open that section and underline it
   const initialId = decodeURIComponent((location.hash || '').replace('#',''));
   if (initialId && byId.has(initialId)) {
     const a = byId.get(initialId);
     markActive(a);
-    openPath(a.closest('li'));
+    showForLi(a.closest('li'));
   }
 
   // 2) Click to underline and expand; keep last clicked highlighted
@@ -48,7 +63,7 @@
     const a = byId.get(id);
     if (!a) return;
     markActive(a);
-    openPath(a.closest('li'));
+    showForLi(a.closest('li'));
   };
 
   anchors.forEach(a => a.addEventListener('click', (e) => {
