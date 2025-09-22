@@ -7,7 +7,7 @@ draft: false
 ShowToc: true         # show Table of Contents
 TocOpen: true         # open TOC by default
 UseHugoToc: true      # use Hugo's built-in nested TOC
-hideSummary: true
+hideSummary: false
 showReadingTime: true
 showPostNavLinks: true
 showBreadCrumbs: true

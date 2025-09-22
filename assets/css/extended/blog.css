@@ -1,100 +1,206 @@
-/* Blog section refinements (list and single) */
+/* ─────────────────────────────────────────────────────────────
+   BLOG SECTION REFINEMENTS (FINAL COMPACT VERSION)
+   ─────────────────────────────────────────────────────────────
+   • Scoped only to blog pages via :has(canonical).
+   • Cleaner vertical/horizontal alignment.
+   • Slightly wider content + compact line spacing.
+   • Accessible TOC (summary kept visible).
+   • Reduced-motion safe.
+   ───────────────────────────────────────────────────────────── */
 
-/* Hide the "Blog" H1 on the section page only */
-html:has(head link[rel="canonical"][href$="/blog/"]) .page-header { display: none !important; }
-
-/* Post cards: cleaner, subtle hover */
-.list .post-entry,
-.list .first-entry {
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  transition: transform .12s ease, box-shadow .12s ease, background .2s ease;
-  background: var(--entry);
+/* ── 0) Scope helper ────────────────────────────────────────── */
+@supports selector(html:has(*)) {
+  :where(html:has(head link[rel="canonical"][href*="/blog/"])) {
+    /* used as a scoping prefix only */
+  }
 }
 
-.list .post-entry:hover,
-.list .first-entry:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 18px rgba(0,0,0,.12);
+/* ── 1) BLOG LIST PAGE ─────────────────────────────────────── */
+
+/* Hide the big "Blog" header ONLY on the blog index page ending with /blog/ */
+html:has(head link[rel="canonical"][href$="/blog/"]) .page-header {
+  display: none !important;
+}
+
+/* Post cards (list + first card) */
+.list :is(.post-entry, .first-entry) {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--entry);
+  padding: 18px;
+  transition:
+    transform .12s ease,
+    box-shadow .12s ease,
+    background .2s ease;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .list :is(.post-entry, .first-entry):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0,0,0,.12);
+  }
 }
 
 .list .entry-header h2 {
-  font-size: 1.35rem;
-  line-height: 1.4;
+  font-size: 1.32rem;
+  line-height: 1.35;
+  margin-bottom: 6px;
+}
+.list .entry-content p,
+.list .entry-footer {
+  color: var(--secondary);
 }
 
-.list .entry-content p { color: var(--secondary); }
-.list .entry-footer { color: var(--secondary); }
+/* ── 2) SINGLE POST TYPOGRAPHY ─────────────────────────────── */
 
-/* Single posts: breathe a little */
-.single .post-title,
-.single .single-title {
-  font-size: clamp(1.8rem, 3.2vw, 2.4rem);
-  line-height: 1.2;
-  margin-bottom: .5rem;
+html:has(head link[rel="canonical"][href*="/blog/"]) :is(.post-title, .single-title) {
+  font-size: clamp(1.85rem, 3vw, 2.4rem);
+  line-height: 1.25;
+  margin: 30px 0 10px;
+  max-width: 78ch; /* wider line length */
 }
 
-.single .post-meta { color: var(--secondary); }
+html:has(head link[rel="canonical"][href*="/blog/"]) .post-meta {
+  color: var(--secondary);
+  margin-bottom: 20px;
+}
 
-/* Blog post typography: slightly smaller, comfy line-height */
+/* Comfortable but compact body */
 html:has(head link[rel="canonical"][href*="/blog/"]) .post-content {
-  font-size: 0.95rem;   /* slightly smaller body text */
-  line-height: 1.72;    /* a touch more breathing room */
+  font-size: 1rem;
+  line-height: 1.58; /* tighter */
+  max-width: 78ch;
 }
 
+html:has(head link[rel="canonical"][href*="/blog/"]) .post-content h2,
+html:has(head link[rel="canonical"][href*="/blog/"]) .post-content h3,
+html:has(head link[rel="canonical"][href*="/blog/"]) .post-content h4 {
+  margin-top: 28px;
+  margin-bottom: 10px;
+}
 html:has(head link[rel="canonical"][href*="/blog/"]) .post-content h2 { font-size: 1.5rem; }
 html:has(head link[rel="canonical"][href*="/blog/"]) .post-content h3 { font-size: 1.2rem; }
-html:has(head link[rel="canonical"][href*="/blog/"]) .post-content h4 { font-size: 1.02rem; }
+html:has(head link[rel="canonical"][href*="/blog/"]) .post-content h4 { font-size: 1.05rem; }
 
-/* Compact TOC list spacing for a cleaner look */
-html:has(head link[rel="canonical"][href*="/blog/"]) .toc .inner { margin: 4px 12px 0; }
-html:has(head link[rel="canonical"][href*="/blog/"]) .toc li { margin: 2px 0; }
+html:has(head link[rel="canonical"][href*="/blog/"]) .post-content p,
+html:has(head link[rel="canonical"][href*="/blog/"]) .post-content ul,
+html:has(head link[rel="canonical"][href*="/blog/"]) .post-content ol,
+html:has(head link[rel="canonical"][href*="/blog/"]) .post-content blockquote,
+html:has(head link[rel="canonical"][href*="/blog/"]) .post-content pre {
+  margin: 12px 0;
+}
 
-/* TOC: one-line items with ellipsis */
+html:has(head link[rel="canonical"][href*="/blog/"]) .post-content ul {
+  list-style: disc outside;
+  padding-left: 22px;
+}
+html:has(head link[rel="canonical"][href*="/blog/"]) .post-content ol {
+  list-style: decimal outside;
+  padding-left: 24px;
+}
+
+html:has(head link[rel="canonical"][href*="/blog/"]) .post-content hr {
+  border: 0;
+  height: 1px;
+  background: rgba(255,255,255,.08);
+  margin: 20px 0;
+  max-width: 78ch;
+}
+
+html:has(head link[rel="canonical"][href*="/blog/"]) .post-content a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1.5px;
+}
+
+/* ── 3) TOC ────────────────────────────────────────────────── */
+
+html:has(head link[rel="canonical"][href*="/blog/"]) .toc {
+  background: transparent !important;
+  border: 0 !important;
+  padding: 0;
+  box-shadow: none !important;
+}
+
+html:has(head link[rel="canonical"][href*="/blog/"]) .toc .inner { margin: 2px 10px 0; }
+
+html:has(head link[rel="canonical"][href*="/blog/"]) .toc ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+html:has(head link[rel="canonical"][href*="/blog/"]) .toc li {
+  margin: 2px 0;
+}
+html:has(head link[rel="canonical"][href*="/blog/"]) .toc li ul {
+  margin-left: 14px;
+}
+
 html:has(head link[rel="canonical"][href*="/blog/"]) .toc a {
   display: block;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 100%;
-  padding: 6px 8px;
+  padding: 5px 7px;
   border-radius: 8px;
-  box-shadow: none; /* override theme's hover underline */
+  line-height: 1.35;
+  color: inherit;
+  text-decoration: none;
+  box-shadow: none;
 }
-
-/* Remove bullets and tighten indentation */
-html:has(head link[rel="canonical"][href*="/blog/"]) .toc ul { list-style: none; padding-inline-start: 0; }
-html:has(head link[rel="canonical"][href*="/blog/"]) .toc li ul { margin-inline-start: 14px; }
-
-/* Hide the "Table of Contents" label */
-html:has(head link[rel="canonical"][href*="/blog/"]) .toc details summary { display: none; }
-
-/* Collapse sub-lists by default; expand when the parent has .is-open */
-/* Collapse nested lists by default, regardless of structure quirks */
-html:has(head link[rel="canonical"][href*="/blog/"]) .toc .inner ul ul { display: none; }
-html:has(head link[rel="canonical"][href*="/blog/"]) .toc li > ul { display: none; }
-html:has(head link[rel="canonical"][href*="/blog/"]) .toc li + ul { display: none; }
-
-/* Show nested lists when parent li is marked open (handles child or following-sibling UL) */
-/* When a list item is open, show all its descendant lists regardless of structure */
-html:has(head link[rel="canonical"][href*="/blog/"]) .toc li.is-open > ul { display: block; }
-html:has(head link[rel="canonical"][href*="/blog/"]) .toc li.is-open + ul { display: block; }
-html:has(head link[rel="canonical"][href*="/blog/"]) .toc li.is-open > ul ul { display: block; }
-html:has(head link[rel="canonical"][href*="/blog/"]) .toc li.is-open + ul ul { display: block; }
-
-/* Optional: subtle guide line for top-level groups */
-html:has(head link[rel="canonical"][href*="/blog/"]) .toc > details > .inner > ul > li { padding-left: .2rem; border-left: 2px solid transparent; }
-html:has(head link[rel="canonical"][href*="/blog/"]) .toc > details > .inner > ul > li:focus-within { border-left-color: var(--tertiary); }
-
-/* Active item highlight: faint white rectangle */
+html:has(head link[rel="canonical"][href*="/blog/"]) .toc a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 html:has(head link[rel="canonical"][href*="/blog/"]) .toc a.is-active {
-  text-decoration: underline !important;
+  background: rgba(255,255,255,.04);
+  text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 3px;
 }
 
-/* Minimal container — remove rectangle look */
-html:has(head link[rel="canonical"][href*="/blog/"]) .toc { background: transparent !important; border: 0 !important; padding: 0; box-shadow: none !important; }
+html:has(head link[rel="canonical"][href*="/blog/"]) .toc details summary {
+  font-size: .85rem;
+  color: var(--secondary);
+  padding: 0;
+  margin-bottom: 4px;
+}
 
-/* Optional: hover underline for clarity */
-html:has(head link[rel="canonical"][href*="/blog/"]) .toc a:hover { text-decoration: underline; text-underline-offset: 3px; }
+/* collapse nested lists by default */
+html:has(head link[rel="canonical"][href*="/blog/"]) .toc ul ul { display: none; }
+html:has(head link[rel="canonical"][href*="/blog/"]) .toc li.is-open > ul,
+html:has(head link[rel="canonical"][href*="/blog/"]) .toc li.is-open + ul {
+  display: block;
+}
+html:has(head link[rel="canonical"][href*="/blog/"]) .toc li.is-open :is(ul, ul ul) {
+  display: block;
+}
+
+/* Optional subtle guideline for TOC groups */
+html:has(head link[rel="canonical"][href*="/blog/"]) .toc > details > .inner > ul > li {
+  padding-left: .2rem;
+  border-left: 2px solid transparent;
+}
+html:has(head link[rel="canonical"][href*="/blog/"]) .toc > details > .inner > ul > li:focus-within {
+  border-left-color: var(--tertiary);
+}
+
+/* ── 4) REDUCED-MOTION SAFETY NET ─────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .list :is(.post-entry, .first-entry) {
+    transition: none;
+  }
+  .list :is(.post-entry, .first-entry):hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+/* ── 5) SMALL THEME INTEROP SAFEGUARDS ───────────────────────────────────
+   If your theme applies very high-specificity styles to links or cards,
+   you can optionally add :where() wrappers to keep specificity low while
+   still scoping to blog pages, e.g.:
+   html:has(head link[rel="canonical"][href*="/blog/"]) :where(.toc a) { … }
+   Already applied above where helpful.
+   ------------------------------------------------------------------------ */
