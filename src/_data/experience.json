@@ -1,35 +1,43 @@
 [
   {
-    "logo": "[Logo]",
-    "company": "[AI Product Company]",
-    "role": "[Machine Learning Engineer]",
-    "dates": "[Month Year - Present]",
+    "logo": "SC",
+    "logoImage": "/assets/images/logos/stablecoupons.svg",
+    "logoAlt": "Stablecoupons logo",
+    "company": "Stablecoupons, Inc.",
+    "role": "Machine Learning Engineer",
+    "dates": "Apr 2025 - Jan 2026",
+    "location": "New York, NY",
     "bullets": [
-      "Built an agentic workflow layer for [product/domain], coordinating planning, retrieval, tool calls, and human review.",
-      "Improved RAG reliability with retrieval evals, citation checks, and regression datasets for high-risk prompts.",
-      "Shipped LLM features with observability, fallback paths, and cost-aware model routing."
+      "Engineered waitlist and back-in-stock APIs for unavailable products, improving user retention by 15% and increasing behavioral signals for ranking experiments.",
+      "Implemented a clickstream-based recommendation model with behavioral feature engineering, improving user engagement by 20%.",
+      "Optimized MongoDB indexing and query performance, reducing model-serving latency by 35% for real-time inference workflows."
     ]
   },
   {
-    "logo": "[Logo]",
-    "company": "[Enterprise AI / SaaS Company]",
-    "role": "[ML Engineer - LLM Systems]",
-    "dates": "[Month Year - Month Year]",
+    "logo": "SIT",
+    "logoImage": "/assets/images/logos/stevens.svg",
+    "logoAlt": "Stevens Institute of Technology logo",
+    "company": "Stevens Institute of Technology",
+    "role": "Teaching Assistant, Numerical Linear Algebra",
+    "dates": "Sep 2024 - Dec 2024",
+    "location": "Hoboken, NJ",
     "bullets": [
-      "Designed RAG pipelines for [document type], covering ingestion, chunking, embeddings, reranking, and answer generation.",
-      "Reduced latency and hallucination risk through structured outputs, prompt contracts, caching, and targeted model selection.",
-      "Maintained production services with FastAPI, vector databases, CI checks, and deployment runbooks."
+      "Led problem-solving sessions on least squares, SVD, eigendecomposition, conditioning, and iterative methods with emphasis on how the concepts show up in ML systems."
     ]
   },
   {
-    "logo": "[Logo]",
-    "company": "[Applied AI / Data Team]",
-    "role": "[Data Scientist / ML Developer]",
-    "dates": "[Month Year - Month Year]",
+    "logo": "ESI",
+    "logoImage": "/assets/images/logos/esi-group.svg",
+    "logoAlt": "ESI Group logo",
+    "company": "ESI Group",
+    "role": "Software Engineer",
+    "dates": "Aug 2019 - Dec 2021",
+    "location": "Bangalore, India",
     "bullets": [
-      "Developed model pipelines for [forecasting/classification/NLP use case] from prototype to scheduled production job.",
-      "Created monitoring views for model quality, data drift, and pipeline health across [team/product].",
-      "Translated ambiguous stakeholder requests into measurable experiments and practical ML iterations."
+      "Contributed to development and maintenance of the core MVC framework, improving product stability across multiple releases.",
+      "Designed C# class-wizard features that reduced development time by roughly 500 man-hours and accelerated team delivery by 35%.",
+      "Built Python tooling to identify and reduce technical debt, cutting open debt tickets by 30% and improving code coverage by 15%.",
+      "Engineered C++ APIs for UI Explorer features, reducing average load time by 40%."
     ]
   }
 ]

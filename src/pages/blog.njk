@@ -3,19 +3,29 @@ layout: layouts/base.njk
 title: Blog
 description: Notes on RAG systems, Agentic AI patterns, LLM evaluation, and local model workflows.
 permalink: /blog/
+bodyClass: blog-index
 ---
-<section class="listing" aria-labelledby="blog-heading">
-  <h1 id="blog-heading">Blog</h1>
-  <p class="listing-intro">Notes from the build loop: system design, experiments, and practical patterns for production AI.</p>
-  <div class="blog-list">
+<section class="blog-listing" aria-labelledby="blog-heading">
+  <header class="listing-header">
+    <h1 id="blog-heading">{{ site.blogTitle }}</h1>
+    <p class="blog-subtitle">{{ site.blogSubtitle }}</p>
+  </header>
+
+  {% if collections.blogTags.length %}
+    <nav class="tag-filter" aria-label="Filter blog posts by tag">
+      <a class="tag-pill tag-pill--active" href="/blog/" aria-current="page">All</a>
+      {% for tagPage in collections.blogTags %}
+        {% set label = tagPage.name %}
+        {% set href = "/blog/tag/" + tagPage.slug + "/" %}
+        {% set isYear = false %}
+        {% include "partials/tag-pill.njk" %}
+      {% endfor %}
+    </nav>
+  {% endif %}
+
+  <ul class="post-list">
     {% for post in collections.posts %}
-      <article class="post">
-        <div>
-          <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
-          <p>{{ post.data.description }}</p>
-        </div>
-        <time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
-      </article>
+      {% include "partials/post-card.njk" %}
     {% endfor %}
-  </div>
+  </ul>
 </section>

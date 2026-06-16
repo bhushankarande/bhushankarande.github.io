@@ -1,17 +1,17 @@
 [
   {
     "label": "GitHub",
-    "url": "[GitHub URL]",
+    "url": "https://github.com/bhushankarande",
     "icon": "github"
   },
   {
     "label": "LinkedIn",
-    "url": "[LinkedIn URL]",
+    "url": "https://www.linkedin.com/in/bhushan-karande",
     "icon": "linkedin"
   },
   {
     "label": "Email",
-    "url": "mailto:[email@example.com]",
+    "url": "mailto:bvkarande1995@gmail.com",
     "icon": "email"
   }
 ]

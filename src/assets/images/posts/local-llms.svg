@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">Local LLMs thumbnail</title>
+  <desc id="desc">A minimal local model workstation diagram.</desc>
+  <rect width="640" height="360" fill="#0f1117"/>
+  <rect x="48" y="52" width="544" height="256" rx="18" fill="#141821" stroke="#344055"/>
+  <rect x="116" y="104" width="408" height="150" rx="14" fill="#171c26" stroke="#46617f" stroke-width="2"/>
+  <rect x="146" y="134" width="178" height="90" rx="10" fill="#0f1117" stroke="#344055" stroke-width="2"/>
+  <g fill="none" stroke="#8ab4dc" stroke-width="3" stroke-linecap="round">
+    <path d="M166 158h74"/>
+    <path d="M166 180h116"/>
+    <path d="M166 202h88"/>
+  </g>
+  <g fill="#8ab4dc">
+    <circle cx="386" cy="156" r="18"/>
+    <circle cx="436" cy="156" r="18"/>
+    <circle cx="386" cy="206" r="18"/>
+    <circle cx="436" cy="206" r="18"/>
+  </g>
+  <g fill="#e7eaf0" font-family="JetBrains Mono, monospace" font-size="16" font-weight="600">
+    <text x="348" y="185">LOCAL</text>
+    <text x="348" y="207">MODEL</text>
+  </g>
+  <text x="80" y="286" fill="#a4adbb" font-family="Source Sans 3, sans-serif" font-size="20">Local LLMs for product prototyping</text>
+</svg>

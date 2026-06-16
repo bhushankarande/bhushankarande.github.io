@@ -7,7 +7,11 @@ bodyClass: home
   <h2 class="section-label" id="bio-heading">Short Bio</h2>
   <div class="bio-grid">
     <div class="profile-side">
-      <div class="profile-photo" aria-label="Profile photo placeholder">{{ profile.photoLabel }}</div>
+      {% if profile.photo %}
+        <img class="profile-photo" src="{{ profile.photo }}" alt="{{ profile.photoLabel or profile.name }}" width="120" height="120">
+      {% else %}
+        <div class="profile-photo" aria-label="Profile photo placeholder">{{ profile.photoLabel }}</div>
+      {% endif %}
       <div>
         <h1 class="profile-name">{{ profile.name }}</h1>
         <p class="profile-title">{{ profile.title }}</p>
@@ -29,17 +33,17 @@ bodyClass: home
   </div>
 </section>
 
-<section id="education" aria-labelledby="education-heading">
-  <h2 class="section-label" id="education-heading">Education</h2>
-  <div class="entry-list">
-    {% for item in education %}
-      <article class="entry">
-        <div class="logo-placeholder" aria-hidden="true">{{ item.logo }}</div>
-        <div class="entry-main">
-          <h3>{{ item.institution }}</h3>
-          <p>{{ item.degree }}</p>
+<section id="skills" aria-labelledby="skills-heading">
+  <h2 class="section-label" id="skills-heading">Technical Skills</h2>
+  <div class="skill-groups">
+    {% for group in skills %}
+      <article class="skill-group">
+        <h3>{{ group.group }}</h3>
+        <div class="skill-list">
+          {% for item in group.items %}
+            <span class="tag">{{ item }}</span>
+          {% endfor %}
         </div>
-        <p class="entry-date">{{ item.dates }}</p>
       </article>
     {% endfor %}
   </div>
@@ -50,10 +54,14 @@ bodyClass: home
   <div class="entry-list">
     {% for item in experience %}
       <article class="entry">
-        <div class="logo-placeholder" aria-hidden="true">{{ item.logo }}</div>
+        {% if item.logoImage %}
+          <img class="entry-logo" src="{{ item.logoImage }}" alt="{{ item.logoAlt }}" width="36" height="36">
+        {% else %}
+          <div class="logo-placeholder" aria-hidden="true">{{ item.logo }}</div>
+        {% endif %}
         <div class="entry-main">
           <h3>{{ item.company }}</h3>
-          <p>{{ item.role }}</p>
+          <p>{{ item.role }}{% if item.location %} / {{ item.location }}{% endif %}</p>
         </div>
         <p class="entry-date">{{ item.dates }}</p>
         <ul class="impact">
@@ -106,6 +114,26 @@ bodyClass: home
           <time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
         </article>
       {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+<section id="education" aria-labelledby="education-heading">
+  <h2 class="section-label" id="education-heading">Education</h2>
+  <div class="entry-list">
+    {% for item in education %}
+      <article class="entry">
+        {% if item.logoImage %}
+          <img class="entry-logo" src="{{ item.logoImage }}" alt="{{ item.logoAlt }}" width="36" height="36">
+        {% else %}
+          <div class="logo-placeholder" aria-hidden="true">{{ item.logo }}</div>
+        {% endif %}
+        <div class="entry-main">
+          <h3>{{ item.institution }}</h3>
+          <p>{{ item.degree }}{% if item.location %} / {{ item.location }}{% endif %}</p>
+        </div>
+        <p class="entry-date">{{ item.dates }}</p>
+      </article>
     {% endfor %}
   </div>
 </section>

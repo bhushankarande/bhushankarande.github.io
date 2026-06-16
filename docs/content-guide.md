@@ -23,13 +23,50 @@ title: "Post title"
 date: 2026-06-16
 description: "One-line summary for lists and metadata."
 tags: ["RAG", "LLM Evaluation"]
+image: "/assets/images/posts/post-thumbnail.svg"
+math: false
+updated: 2026-07-01
+updateNote: "Added an evaluation section."
 draft: false
 ---
 
 Write the post here.
 ```
 
-Run `pnpm run build`. The post appears on `/blog/` and gets an individual page at `/blog/file-name/`.
+Required fields are `title`, `date`, `description`, `tags`, and `draft`.
+
+Optional fields:
+
+- `image`: 16:9 thumbnail shown on `/blog/` and used as the Open Graph image.
+- `math`: set to `true` when the post uses LaTeX math.
+- `updated`: date for the update notice shown near the top of the post.
+- `updateNote`: short explanation appended to the update notice.
+
+Run `pnpm run build`. The post appears on `/blog/`, gets an individual page at `/blog/file-name/`, and is automatically included in tag archives such as `/blog/tag/rag/` and year archives such as `/blog/2026/`.
+
+## Blog Markdown Features
+
+Use standard Markdown for headings, lists, links, images, and code. `h2` and `h3` headings automatically receive anchors and appear in the desktop table of contents.
+
+For image captions, use the Markdown image title:
+
+```md
+![Architecture diagram](/assets/images/posts/rag-system.png "Caption shown below the image.")
+```
+
+For math posts, set `math: true` and use KaTeX delimiters:
+
+```md
+Inline math: $S = w_aA + w_fF + w_cC$
+
+Block math:
+
+$$
+S = w_aA + w_fF + w_cC
+$$
+```
+
+Put blog thumbnails in `src/assets/images/posts/`. SVG is a good default for diagrams and placeholders; PNG or JPG is fine for real screenshots.
 
 ## Add a Project
 

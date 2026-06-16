@@ -1,7 +1,9 @@
 {
-  "title": "Bhushan | Machine Learning Engineer",
-  "author": "Bhushan",
-  "description": "Bhushan is a Machine Learning Engineer focused on Agentic AI, RAG systems, and LLM orchestration.",
+  "title": "Bhushan Karande | Machine Learning Engineer",
+  "author": "Bhushan Karande",
+  "description": "Bhushan Karande is a Machine Learning Engineer focused on Agentic AI, RAG systems, recommendation systems, and production ML.",
+  "blogTitle": "Blog",
+  "blogSubtitle": "Machine learning, AI systems, and notes from the build loop.",
   "url": "https://bhushankarande.github.io",
   "language": "en",
   "themeColor": "#ffffff",

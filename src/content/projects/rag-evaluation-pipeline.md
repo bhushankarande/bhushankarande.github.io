@@ -1,12 +1,11 @@
 ---
-title: "[RAG Evaluation Pipeline]"
+title: "Production RAG Document Intelligence Platform"
 date: 2026-01-02
 order: 2
-description: "[An eval harness for retrieval quality, groundedness, answer similarity, and prompt/model regressions.]"
-tags: ["Ragas", "Pytest", "Chroma"]
-github: "#"
-demo: "#"
+permalink: "/projects/production-rag-document-intelligence/"
+description: "A document QA system for PDF ingestion, semantic retrieval, reranking, citation-backed answers, and local deployment."
+tags: ["LangChain", "FAISS", "FastAPI", "Hugging Face"]
 draft: false
 ---
 
-[Write project details here. Include dataset design, retrieval metrics, answer quality checks, and regression workflow.]
+Developed a RAG-based document intelligence system using LangChain, FAISS, FastAPI, Streamlit, and Hugging Face embeddings. The platform supports PDF ingestion, chunking, semantic retrieval, reranking, citation-backed answer generation, evaluation workflows, and Dockerized local deployment.

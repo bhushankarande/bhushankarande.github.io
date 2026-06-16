@@ -1,9 +1,10 @@
 {
-  "name": "Bhushan",
+  "name": "Bhushan Karande",
   "title": "Machine Learning Engineer",
-  "photoLabel": "[Photo]",
+  "photo": "/assets/images/profile/bhushan-karande.png",
+  "photoLabel": "Bhushan Karande",
   "bio": [
-    "I am a Machine Learning Engineer focused on Agentic AI, RAG systems, and LLM orchestration. I build production AI systems that are useful in the messy middle: reliable retrieval, practical agents, clean evaluation loops, and services that teams can actually operate.",
-    "My work sits between applied research and product engineering. I like small, testable systems, clear interfaces, and models that earn trust through behavior rather than demos."
+    "I am a Machine Learning Engineer focused on production AI systems: LLMs, RAG pipelines, recommendation models, and agentic workflows. Recent work includes clickstream-based recommendation, model-serving latency improvements, and multi-agent report generation.",
+    "My background spans applied ML, backend engineering, and numerical methods. I like building systems that are useful beyond the demo: measurable, debuggable, and practical enough for real users."
   ]
 }

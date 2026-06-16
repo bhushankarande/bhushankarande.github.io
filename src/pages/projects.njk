@@ -1,12 +1,12 @@
 ---
 layout: layouts/base.njk
 title: Projects
-description: Projects around Agentic AI, RAG systems, local LLMs, and orchestration.
+description: Projects around Agentic AI, RAG systems, recommendations, backend ML, and applied deep learning.
 permalink: /projects/
 ---
 <section class="listing" aria-labelledby="projects-heading">
   <h1 id="projects-heading">Projects</h1>
-  <p class="listing-intro">Selected project notes and build artifacts around retrieval, agents, local models, and evaluation.</p>
+  <p class="listing-intro">Selected project notes and build artifacts around retrieval, agents, recommendation systems, backend ML, and applied deep learning.</p>
   <div class="project-grid">
     {% for project in collections.projects %}
       <a class="project-card" href="{{ project.url }}" aria-label="{{ project.data.title }} project">

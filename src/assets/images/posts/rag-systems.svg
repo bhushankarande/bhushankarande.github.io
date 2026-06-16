@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">RAG systems thumbnail</title>
+  <desc id="desc">A minimal retrieval augmented generation pipeline diagram.</desc>
+  <rect width="640" height="360" fill="#0f1117"/>
+  <rect x="48" y="52" width="544" height="256" rx="18" fill="#141821" stroke="#344055"/>
+  <g fill="none" stroke="#8ab4dc" stroke-width="3" stroke-linecap="round">
+    <path d="M151 180h92"/>
+    <path d="M397 180h92"/>
+    <path d="M289 117v126"/>
+    <path d="M351 117v126"/>
+  </g>
+  <g fill="#171c26" stroke="#46617f" stroke-width="2">
+    <rect x="80" y="135" width="96" height="90" rx="12"/>
+    <rect x="272" y="82" width="96" height="70" rx="12"/>
+    <rect x="272" y="208" width="96" height="70" rx="12"/>
+    <rect x="464" y="135" width="96" height="90" rx="12"/>
+  </g>
+  <g fill="#e7eaf0" font-family="JetBrains Mono, monospace" font-size="18" font-weight="600">
+    <text x="104" y="186">DOCS</text>
+    <text x="292" y="123">VEC</text>
+    <text x="292" y="249">EVAL</text>
+    <text x="492" y="186">LLM</text>
+  </g>
+  <text x="80" y="286" fill="#a4adbb" font-family="Source Sans 3, sans-serif" font-size="20">RAG systems that fail gracefully</text>
+</svg>

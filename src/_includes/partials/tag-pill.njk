@@ -1,0 +1,3 @@
+{% set pillLabel = label or tag %}
+{% set pillHref = href or ("/blog/tag/" + (pillLabel | slug) + "/") %}
+<a class="tag-pill{% if isYear %} tag-pill--year{% endif %}{% if isActive %} tag-pill--active{% endif %}" href="{{ pillHref }}"{% if isActive %} aria-current="page"{% endif %}>{{ pillLabel }}</a>

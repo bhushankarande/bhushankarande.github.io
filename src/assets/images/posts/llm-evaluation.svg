@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">LLM evaluation thumbnail</title>
+  <desc id="desc">A minimal dashboard showing evaluation metrics.</desc>
+  <rect width="640" height="360" fill="#0f1117"/>
+  <rect x="48" y="52" width="544" height="256" rx="18" fill="#141821" stroke="#344055"/>
+  <g fill="#171c26" stroke="#46617f" stroke-width="2">
+    <rect x="88" y="96" width="128" height="168" rx="12"/>
+    <rect x="256" y="96" width="128" height="168" rx="12"/>
+    <rect x="424" y="96" width="128" height="168" rx="12"/>
+  </g>
+  <g fill="#8ab4dc">
+    <rect x="112" y="206" width="24" height="34" rx="4"/>
+    <rect x="148" y="174" width="24" height="66" rx="4"/>
+    <rect x="184" y="136" width="24" height="104" rx="4"/>
+    <rect x="280" y="184" width="24" height="56" rx="4"/>
+    <rect x="316" y="150" width="24" height="90" rx="4"/>
+    <rect x="352" y="118" width="24" height="122" rx="4"/>
+    <rect x="448" y="162" width="24" height="78" rx="4"/>
+    <rect x="484" y="132" width="24" height="108" rx="4"/>
+    <rect x="520" y="190" width="24" height="50" rx="4"/>
+  </g>
+  <g fill="#e7eaf0" font-family="JetBrains Mono, monospace" font-size="16" font-weight="600" text-anchor="middle">
+    <text x="152" y="126">GOLD</text>
+    <text x="320" y="126">JUDGE</text>
+    <text x="488" y="126">REGRESS</text>
+  </g>
+  <text x="80" y="286" fill="#a4adbb" font-family="Source Sans 3, sans-serif" font-size="20">Evaluating LLM apps beyond vibes</text>
+</svg>

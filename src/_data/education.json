@@ -1,14 +1,29 @@
 [
   {
-    "logo": "[Logo]",
-    "institution": "[Institution Name]",
-    "degree": "[Degree / Program Name]",
-    "dates": "[Year - Year]"
+    "logo": "SIT",
+    "logoImage": "/assets/images/logos/stevens.svg",
+    "logoAlt": "Stevens Institute of Technology logo",
+    "institution": "Stevens Institute of Technology",
+    "degree": "Master of Science in Data Science",
+    "dates": "Dec 2024",
+    "location": "Hoboken, NJ"
   },
   {
-    "logo": "[Logo]",
-    "institution": "[Institution or Platform]",
-    "degree": "[Certification / Specialization]",
-    "dates": "[Year]"
+    "logo": "IISc",
+    "logoImage": "/assets/images/logos/iisc.svg",
+    "logoAlt": "Indian Institute of Science logo",
+    "institution": "Indian Institute of Science",
+    "degree": "Master of Technology in Civil Engineering (Structural)",
+    "dates": "Jun 2019",
+    "location": "Bangalore, India"
+  },
+  {
+    "logo": "SPCE",
+    "logoImage": "/assets/images/logos/spce.svg",
+    "logoAlt": "Sardar Patel College of Engineering logo",
+    "institution": "Sardar Patel College of Engineering",
+    "degree": "Bachelor of Technology in Civil Engineering",
+    "dates": "Jun 2016",
+    "location": "Mumbai, India"
   }
 ]

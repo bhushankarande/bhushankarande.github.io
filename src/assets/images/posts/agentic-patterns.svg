@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">Agentic patterns thumbnail</title>
+  <desc id="desc">A minimal graph of planner, router, critic, and tools.</desc>
+  <rect width="640" height="360" fill="#0f1117"/>
+  <rect x="48" y="52" width="544" height="256" rx="18" fill="#141821" stroke="#344055"/>
+  <g fill="none" stroke="#8ab4dc" stroke-width="3">
+    <path d="M320 118L204 194"/>
+    <path d="M320 118l116 76"/>
+    <path d="M204 194h232"/>
+    <path d="M204 194l116 62"/>
+    <path d="M436 194l-116 62"/>
+  </g>
+  <g fill="#171c26" stroke="#46617f" stroke-width="2">
+    <circle cx="320" cy="118" r="42"/>
+    <circle cx="204" cy="194" r="42"/>
+    <circle cx="436" cy="194" r="42"/>
+    <circle cx="320" cy="256" r="42"/>
+  </g>
+  <g fill="#e7eaf0" font-family="JetBrains Mono, monospace" font-size="16" font-weight="600" text-anchor="middle">
+    <text x="320" y="124">PLAN</text>
+    <text x="204" y="200">ROUTE</text>
+    <text x="436" y="200">TOOLS</text>
+    <text x="320" y="262">CRITIC</text>
+  </g>
+  <text x="80" y="286" fill="#a4adbb" font-family="Source Sans 3, sans-serif" font-size="20">Agentic patterns worth trusting</text>
+</svg>

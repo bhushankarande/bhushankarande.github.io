@@ -1,0 +1,18 @@
+[
+  {
+    "group": "LLMs and RAG",
+    "items": ["LangChain", "LlamaIndex", "Hugging Face", "Sentence Transformers", "FAISS", "Embeddings", "Reranking", "Prompt Engineering", "Agentic AI", "Multi-Agent Systems"]
+  },
+  {
+    "group": "Machine Learning",
+    "items": ["Scikit-learn", "PyTorch", "TensorFlow", "Keras", "NLP", "Computer Vision", "Recommendation Systems", "Model Evaluation", "A/B Testing"]
+  },
+  {
+    "group": "Data and Backend",
+    "items": ["Python", "SQL", "PySpark", "MongoDB", "PostgreSQL", "FastAPI", "Flask", "Streamlit", "REST APIs", "ETL Pipelines"]
+  },
+  {
+    "group": "MLOps and Cloud",
+    "items": ["Docker", "Kubernetes", "MLflow", "Airflow", "GitHub Actions", "Jenkins", "AWS", "GCP", "Terraform", "Linux"]
+  }
+]

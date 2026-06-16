@@ -1,12 +1,11 @@
 ---
-title: "[Agentic Research Assistant]"
+title: "Back-in-Stock Intelligence API"
 date: 2026-01-05
 order: 5
-description: "[A research copilot that decomposes questions, retrieves sources, drafts answers, and flags uncertainty.]"
-tags: ["Agents", "Vector DB", "Evals"]
-github: "#"
-demo: "#"
+permalink: "/projects/back-in-stock-intelligence-api/"
+description: "A waitlist and unavailable-product API that improved retention while producing cleaner behavioral ranking signals."
+tags: ["FastAPI", "MongoDB", "Ranking Signals", "Backend ML"]
 draft: false
 ---
 
-[Write project details here. Include question decomposition, source retrieval, answer synthesis, and confidence checks.]
+Engineered waitlist and back-in-stock flows for unavailable products, improving user retention by 15% and increasing the availability of behavioral signals for downstream ranking and recommendation experiments.

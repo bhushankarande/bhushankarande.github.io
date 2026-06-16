@@ -1,23 +1,66 @@
 ---
 layout: layouts/base.njk
+bodyClass: post-page
+toc: true
 ---
-<article class="article">
-  <a class="back-link" href="/blog/">Back to blog</a>
-  <header class="article-header">
-    <p class="article-kicker">Blog</p>
-    <h1>{{ title }}</h1>
-    <p class="article-meta">
-      <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
-      {% if tags and tags.length %}
+<article class="post-layout">
+  {% include "partials/toc.njk" %}
+
+  <div class="post-content">
+    <a class="back-link" href="/blog/">Back to blog</a>
+
+    <header class="post-header">
+      <h1>{{ title }}</h1>
+      <p class="post-header__meta">
+        <time datetime="{{ page.date | dateISO }}">{{ page.date | dateDisplay }}</time>
         <span aria-hidden="true">/</span>
-        {{ tags | join(", ") }}
+        <span>{{ content | readTime }}</span>
+      </p>
+      {% if tags and tags.length %}
+        <div class="post-header__tags" aria-label="Post filters">
+          {% set label = page.date | year %}
+          {% set href = "/blog/" + (page.date | year) + "/" %}
+          {% set isYear = true %}
+          {% set isActive = false %}
+          {% include "partials/tag-pill.njk" %}
+
+          {% set isYear = false %}
+          {% for tag in tags %}
+            {% set label = tag %}
+            {% set href = "/blog/tag/" + (tag | slug) + "/" %}
+            {% set isActive = false %}
+            {% include "partials/tag-pill.njk" %}
+          {% endfor %}
+        </div>
       {% endif %}
-    </p>
-    {% if description %}
-      <p class="article-description">{{ description }}</p>
+      {% if description %}
+        <p class="post-header__description">{{ description }}</p>
+      {% endif %}
+    </header>
+
+    {% if updated %}
+      <p class="post-update">
+        <strong>[{{ updated | dateISO }} Added{% if updateNote %}: {{ updateNote }}{% endif %}]</strong>
+      </p>
     {% endif %}
-  </header>
-  <div class="prose">
-    {{ content | safe }}
+
+    <div class="post-body">
+      {{ content | safe }}
+    </div>
+
+    <footer class="post-footer">
+      <hr>
+      <p>If you found this useful, cite as:</p>
+      <blockquote>
+        Bhushan Karande ({{ page.date | year }}). "{{ title | cleanTitle }}." {{ site.url }}{{ page.url }}.
+      </blockquote>
+      <pre><code>@misc{karande-{{ page.date | year }}-{{ title | slug }},
+  title = { {{ title | cleanTitle }} },
+  author = {Karande, Bhushan},
+  year = { {{ page.date | year }} },
+  month = { {{ page.date | monthName }} },
+  url = { {{ site.url }}{{ page.url }} }
+}</code></pre>
+    </footer>
   </div>
 </article>

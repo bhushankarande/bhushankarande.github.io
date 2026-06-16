@@ -1,0 +1,38 @@
+{% set postYear = post.date | year %}
+<li class="post-card">
+  <div class="post-card__main">
+    <h2 class="post-card__heading">
+      <a class="post-card__title" href="{{ post.url }}">{{ post.data.title }}</a>
+    </h2>
+    <p class="post-card__byline">
+      <span>{{ post.templateContent | readTime }}</span>
+      <span aria-hidden="true">/</span>
+      <time datetime="{{ post.date | dateISO }}">{{ post.date | dateDisplay }}</time>
+    </p>
+    <div class="post-card__tags" aria-label="Post filters">
+      {% set label = postYear %}
+      {% set href = "/blog/" + postYear + "/" %}
+      {% set isYear = true %}
+      {% set isActive = false %}
+      {% include "partials/tag-pill.njk" %}
+
+      {% set isYear = false %}
+      {% for tag in post.data.tags %}
+        {% set label = tag %}
+        {% set href = "/blog/tag/" + (tag | slug) + "/" %}
+        {% set isActive = false %}
+        {% include "partials/tag-pill.njk" %}
+      {% endfor %}
+    </div>
+    {% if post.data.description %}
+      <p class="post-card__description">{{ post.data.description }}</p>
+    {% endif %}
+  </div>
+  <a class="post-card__thumb" href="{{ post.url }}" tabindex="-1" aria-hidden="true">
+    {% if post.data.image %}
+      <img src="{{ post.data.image }}" alt="" loading="lazy" width="160" height="90">
+    {% else %}
+      <span class="post-card__thumb-fallback">AI</span>
+    {% endif %}
+  </a>
+</li>

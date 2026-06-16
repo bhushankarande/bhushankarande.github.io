@@ -1,0 +1,36 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: collections.blogTags
+  size: 1
+  alias: tagPage
+permalink: "/blog/tag/{{ tagPage.slug }}/"
+bodyClass: blog-index
+eleventyComputed:
+  title: "Posts tagged {{ tagPage.name }}"
+  description: "Blog posts tagged {{ tagPage.name }}."
+---
+<section class="blog-listing" aria-labelledby="blog-tag-heading">
+  <header class="listing-header">
+    <p class="article-kicker">Tag archive</p>
+    <h1 id="blog-tag-heading">Posts tagged "{{ tagPage.name }}"</h1>
+    <p class="blog-subtitle">{{ tagPage.posts.length }} post{% if tagPage.posts.length != 1 %}s{% endif %} from {{ site.blogTitle | lower }}.</p>
+  </header>
+
+  <nav class="tag-filter" aria-label="Filter blog posts by tag">
+    <a class="tag-pill" href="/blog/">All</a>
+    {% for item in collections.blogTags %}
+      {% set label = item.name %}
+      {% set href = "/blog/tag/" + item.slug + "/" %}
+      {% set isYear = false %}
+      {% set isActive = item.slug == tagPage.slug %}
+      {% include "partials/tag-pill.njk" %}
+    {% endfor %}
+  </nav>
+
+  <ul class="post-list">
+    {% for post in tagPage.posts %}
+      {% include "partials/post-card.njk" %}
+    {% endfor %}
+  </ul>
+</section>

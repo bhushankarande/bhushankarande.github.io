@@ -19,6 +19,16 @@ eleventyExcludeFromCollections: true
       <lastmod>{{ post.date | htmlDateString }}</lastmod>
     </url>
   {% endfor %}
+  {% for tagPage in collections.blogTags %}
+    <url>
+      <loc>{{ site.url }}/blog/tag/{{ tagPage.slug }}/</loc>
+    </url>
+  {% endfor %}
+  {% for yearPage in collections.blogYears %}
+    <url>
+      <loc>{{ site.url }}/blog/{{ yearPage.year }}/</loc>
+    </url>
+  {% endfor %}
   {% for project in collections.projects %}
     <url>
       <loc>{{ site.url }}{{ project.url }}</loc>

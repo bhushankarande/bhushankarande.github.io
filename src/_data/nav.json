@@ -5,9 +5,9 @@
     "section": "bio"
   },
   {
-    "label": "Education",
-    "url": "/#education",
-    "section": "education"
+    "label": "Skills",
+    "url": "/#skills",
+    "section": "skills"
   },
   {
     "label": "Experience",
@@ -25,5 +25,10 @@
     "url": "/#blog",
     "section": "blog",
     "match": "/blog/"
+  },
+  {
+    "label": "Education",
+    "url": "/#education",
+    "section": "education"
   }
 ]

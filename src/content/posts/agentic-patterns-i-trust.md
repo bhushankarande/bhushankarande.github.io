@@ -3,6 +3,8 @@ title: "[Agentic Patterns I Actually Trust]"
 date: 2026-02-12
 description: "[A practical look at planners, routers, critics, and when a simple chain is better.]"
 tags: ["Agentic AI", "LLM Orchestration"]
+image: "/assets/images/posts/agentic-patterns.svg"
+math: false
 draft: false
 ---
 
