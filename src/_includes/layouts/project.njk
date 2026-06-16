@@ -1,0 +1,31 @@
+---
+layout: layouts/base.njk
+---
+<article class="article">
+  <a class="back-link" href="/projects/">Back to projects</a>
+  <header class="article-header">
+    <p class="article-kicker">Project</p>
+    <h1>{{ title }}</h1>
+    {% if description %}
+      <p class="article-description">{{ description }}</p>
+    {% endif %}
+    {% if tags and tags.length %}
+      <div class="tag-row article-tags">
+        {% for tag in tags %}
+          <span class="tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+    <div class="article-actions">
+      {% if github %}
+        <a class="text-button" href="{{ github }}">GitHub</a>
+      {% endif %}
+      {% if demo %}
+        <a class="text-button" href="{{ demo }}">Demo</a>
+      {% endif %}
+    </div>
+  </header>
+  <div class="prose">
+    {{ content | safe }}
+  </div>
+</article>

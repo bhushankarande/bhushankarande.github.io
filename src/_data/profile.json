@@ -1,0 +1,9 @@
+{
+  "name": "Bhushan",
+  "title": "Machine Learning Engineer",
+  "photoLabel": "[Photo]",
+  "bio": [
+    "I am a Machine Learning Engineer focused on Agentic AI, RAG systems, and LLM orchestration. I build production AI systems that are useful in the messy middle: reliable retrieval, practical agents, clean evaluation loops, and services that teams can actually operate.",
+    "My work sits between applied research and product engineering. I like small, testable systems, clear interfaces, and models that earn trust through behavior rather than demos."
+  ]
+}

@@ -1,0 +1,25 @@
+---
+layout: layouts/base.njk
+title: Projects
+description: Projects around Agentic AI, RAG systems, local LLMs, and orchestration.
+permalink: /projects/
+---
+<section class="listing" aria-labelledby="projects-heading">
+  <h1 id="projects-heading">Projects</h1>
+  <p class="listing-intro">Selected project notes and build artifacts around retrieval, agents, local models, and evaluation.</p>
+  <div class="project-grid">
+    {% for project in collections.projects %}
+      <a class="project-card" href="{{ project.url }}" aria-label="{{ project.data.title }} project">
+        <h2>{{ project.data.title }}</h2>
+        <p>{{ project.data.description }}</p>
+        {% if project.data.tags and project.data.tags.length %}
+          <div class="tag-row">
+            {% for tag in project.data.tags %}
+              <span class="tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </a>
+    {% endfor %}
+  </div>
+</section>

@@ -1,0 +1,88 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--color-bg);
+}
+
+body {
+  margin: 0;
+  color: var(--color-text);
+  background: var(--color-bg);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.62;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: var(--color-link);
+  text-decoration: none;
+  text-underline-offset: 0.18em;
+}
+
+a:hover,
+a:focus-visible {
+  text-decoration: underline;
+}
+
+p,
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--color-text);
+}
+
+ul {
+  margin: 0;
+  padding-left: 1.08rem;
+}
+
+li + li {
+  margin-top: 0.28rem;
+}
+
+button {
+  font: inherit;
+}
+
+.prose {
+  color: var(--color-text);
+  font-size: 1rem;
+}
+
+.prose > * + * {
+  margin-top: 1rem;
+}
+
+.prose h2,
+.prose h3 {
+  margin-top: 1.7rem;
+  font-family: var(--font-serif);
+  line-height: 1.15;
+}
+
+.prose h2 {
+  font-size: 1.55rem;
+}
+
+.prose h3 {
+  font-size: 1.25rem;
+}
+
+.prose code {
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 0.08rem 0.28rem;
+  background: var(--color-subtle);
+  font-family: var(--font-mono);
+  font-size: 0.86em;
+}

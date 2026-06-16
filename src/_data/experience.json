@@ -1,0 +1,35 @@
+[
+  {
+    "logo": "[Logo]",
+    "company": "[AI Product Company]",
+    "role": "[Machine Learning Engineer]",
+    "dates": "[Month Year - Present]",
+    "bullets": [
+      "Built an agentic workflow layer for [product/domain], coordinating planning, retrieval, tool calls, and human review.",
+      "Improved RAG reliability with retrieval evals, citation checks, and regression datasets for high-risk prompts.",
+      "Shipped LLM features with observability, fallback paths, and cost-aware model routing."
+    ]
+  },
+  {
+    "logo": "[Logo]",
+    "company": "[Enterprise AI / SaaS Company]",
+    "role": "[ML Engineer - LLM Systems]",
+    "dates": "[Month Year - Month Year]",
+    "bullets": [
+      "Designed RAG pipelines for [document type], covering ingestion, chunking, embeddings, reranking, and answer generation.",
+      "Reduced latency and hallucination risk through structured outputs, prompt contracts, caching, and targeted model selection.",
+      "Maintained production services with FastAPI, vector databases, CI checks, and deployment runbooks."
+    ]
+  },
+  {
+    "logo": "[Logo]",
+    "company": "[Applied AI / Data Team]",
+    "role": "[Data Scientist / ML Developer]",
+    "dates": "[Month Year - Month Year]",
+    "bullets": [
+      "Developed model pipelines for [forecasting/classification/NLP use case] from prototype to scheduled production job.",
+      "Created monitoring views for model quality, data drift, and pipeline health across [team/product].",
+      "Translated ambiguous stakeholder requests into measurable experiments and practical ML iterations."
+    ]
+  }
+]

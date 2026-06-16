@@ -1,0 +1,111 @@
+---
+layout: layouts/base.njk
+permalink: /
+bodyClass: home
+---
+<section id="bio" aria-labelledby="bio-heading">
+  <h2 class="section-label" id="bio-heading">Short Bio</h2>
+  <div class="bio-grid">
+    <div class="profile-side">
+      <div class="profile-photo" aria-label="Profile photo placeholder">{{ profile.photoLabel }}</div>
+      <div>
+        <h1 class="profile-name">{{ profile.name }}</h1>
+        <p class="profile-title">{{ profile.title }}</p>
+        <div class="social-links" aria-label="Social links">
+          {% for item in social %}
+            <a class="icon-link" href="{{ item.url }}" aria-label="{{ item.label }}">
+              {% include "partials/social-icon.njk" %}
+            </a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <div class="bio-copy">
+      {% for paragraph in profile.bio %}
+        <p>{{ paragraph }}</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="education" aria-labelledby="education-heading">
+  <h2 class="section-label" id="education-heading">Education</h2>
+  <div class="entry-list">
+    {% for item in education %}
+      <article class="entry">
+        <div class="logo-placeholder" aria-hidden="true">{{ item.logo }}</div>
+        <div class="entry-main">
+          <h3>{{ item.institution }}</h3>
+          <p>{{ item.degree }}</p>
+        </div>
+        <p class="entry-date">{{ item.dates }}</p>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="experience" aria-labelledby="experience-heading">
+  <h2 class="section-label" id="experience-heading">Experience</h2>
+  <div class="entry-list">
+    {% for item in experience %}
+      <article class="entry">
+        <div class="logo-placeholder" aria-hidden="true">{{ item.logo }}</div>
+        <div class="entry-main">
+          <h3>{{ item.company }}</h3>
+          <p>{{ item.role }}</p>
+        </div>
+        <p class="entry-date">{{ item.dates }}</p>
+        <ul class="impact">
+          {% for bullet in item.bullets %}
+            <li>{{ bullet }}</li>
+          {% endfor %}
+        </ul>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="projects" aria-labelledby="projects-heading">
+  <div class="section-heading-row">
+    <h2 class="section-label" id="projects-heading">Projects</h2>
+    <a class="section-link" href="/projects/">View all</a>
+  </div>
+  <div class="project-grid">
+    {% for project in collections.projects %}
+      {% if loop.index0 < 5 %}
+        <a class="project-card" href="{{ project.url }}" aria-label="{{ project.data.title }} project">
+          <h3>{{ project.data.title }}</h3>
+          <p>{{ project.data.description }}</p>
+          {% if project.data.tags and project.data.tags.length %}
+            <div class="tag-row">
+              {% for tag in project.data.tags %}
+                <span class="tag">{{ tag }}</span>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+<section id="blog" aria-labelledby="blog-heading">
+  <div class="section-heading-row">
+    <h2 class="section-label" id="blog-heading">Blog</h2>
+    <a class="section-link" href="/blog/">View all</a>
+  </div>
+  <div class="blog-list">
+    {% for post in collections.posts %}
+      {% if loop.index0 < 4 %}
+        <article class="post">
+          <div>
+            <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+            <p>{{ post.data.description }}</p>
+          </div>
+          <time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+        </article>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>

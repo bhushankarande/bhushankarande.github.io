@@ -1,0 +1,14 @@
+[
+  {
+    "logo": "[Logo]",
+    "institution": "[Institution Name]",
+    "degree": "[Degree / Program Name]",
+    "dates": "[Year - Year]"
+  },
+  {
+    "logo": "[Logo]",
+    "institution": "[Institution or Platform]",
+    "degree": "[Certification / Specialization]",
+    "dates": "[Year]"
+  }
+]

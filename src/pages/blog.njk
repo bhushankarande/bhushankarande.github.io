@@ -1,0 +1,21 @@
+---
+layout: layouts/base.njk
+title: Blog
+description: Notes on RAG systems, Agentic AI patterns, LLM evaluation, and local model workflows.
+permalink: /blog/
+---
+<section class="listing" aria-labelledby="blog-heading">
+  <h1 id="blog-heading">Blog</h1>
+  <p class="listing-intro">Notes from the build loop: system design, experiments, and practical patterns for production AI.</p>
+  <div class="blog-list">
+    {% for post in collections.posts %}
+      <article class="post">
+        <div>
+          <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+          <p>{{ post.data.description }}</p>
+        </div>
+        <time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+      </article>
+    {% endfor %}
+  </div>
+</section>

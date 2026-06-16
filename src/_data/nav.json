@@ -1,0 +1,29 @@
+[
+  {
+    "label": "Bio",
+    "url": "/#bio",
+    "section": "bio"
+  },
+  {
+    "label": "Education",
+    "url": "/#education",
+    "section": "education"
+  },
+  {
+    "label": "Experience",
+    "url": "/#experience",
+    "section": "experience"
+  },
+  {
+    "label": "Projects",
+    "url": "/#projects",
+    "section": "projects",
+    "match": "/projects/"
+  },
+  {
+    "label": "Blog",
+    "url": "/#blog",
+    "section": "blog",
+    "match": "/blog/"
+  }
+]

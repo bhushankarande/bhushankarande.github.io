@@ -1,0 +1,23 @@
+---
+layout: layouts/base.njk
+---
+<article class="article">
+  <a class="back-link" href="/blog/">Back to blog</a>
+  <header class="article-header">
+    <p class="article-kicker">Blog</p>
+    <h1>{{ title }}</h1>
+    <p class="article-meta">
+      <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
+      {% if tags and tags.length %}
+        <span aria-hidden="true">/</span>
+        {{ tags | join(", ") }}
+      {% endif %}
+    </p>
+    {% if description %}
+      <p class="article-description">{{ description }}</p>
+    {% endif %}
+  </header>
+  <div class="prose">
+    {{ content | safe }}
+  </div>
+</article>

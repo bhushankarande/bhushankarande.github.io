@@ -1,0 +1,17 @@
+[
+  {
+    "label": "GitHub",
+    "url": "[GitHub URL]",
+    "icon": "github"
+  },
+  {
+    "label": "LinkedIn",
+    "url": "[LinkedIn URL]",
+    "icon": "linkedin"
+  },
+  {
+    "label": "Email",
+    "url": "mailto:[email@example.com]",
+    "icon": "email"
+  }
+]
