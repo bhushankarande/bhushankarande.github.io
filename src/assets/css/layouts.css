@@ -54,9 +54,8 @@ section + section {
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-auto-rows: 1fr;
-  gap: 0.9rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
 }
 
 .project-grid .project-card {
@@ -66,8 +65,9 @@ section + section {
 .listing h1,
 .article h1 {
   font-family: var(--font-serif);
-  font-size: 3rem;
-  line-height: 0.98;
+  font-size: 2.65rem;
+  line-height: 1.02;
+  font-weight: 800;
 }
 
 .listing-intro {
@@ -86,8 +86,15 @@ section + section {
 
 .listing-header h1 {
   font-family: var(--font-serif);
-  font-size: 3rem;
-  line-height: 0.98;
+  font-size: 2.65rem;
+  line-height: 1.02;
+  font-weight: 800;
+}
+
+@media (max-width: 980px) {
+  .project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 .blog-subtitle {
