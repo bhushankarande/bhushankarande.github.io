@@ -704,13 +704,19 @@
 }
 
 .post-body h2 {
-  margin-top: 2.4rem;
-  font-size: 1.75rem;
+  margin-top: 3.25rem;
+  border-top: 1px solid color-mix(in srgb, var(--color-border) 78%, transparent);
+  padding-top: 1.35rem;
+  color: var(--color-link);
+  font-size: 1.68rem;
+  font-weight: 800;
 }
 
 .post-body h3 {
-  margin-top: 1.8rem;
-  font-size: 1.35rem;
+  margin-top: 2.15rem;
+  color: var(--color-accent-ink);
+  font-size: 1.28rem;
+  font-weight: 800;
 }
 
 .post-body ul,
