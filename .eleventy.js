@@ -86,6 +86,12 @@ function groupPostsByYear(posts) {
   return [...yearMap.values()].sort((a, b) => Number(b.year) - Number(a.year));
 }
 
+function getPublishedProjects(collectionApi) {
+  return collectionApi
+    .getFilteredByGlob("src/content/projects/*.md")
+    .filter(isPublished);
+}
+
 module.exports = function (eleventyConfig) {
   const markdownLibrary = markdownIt({
     html: true,
@@ -171,10 +177,12 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addCollection("projects", (collectionApi) => {
-    return collectionApi
-      .getFilteredByGlob("src/content/projects/*.md")
-      .filter(isPublished)
+    return getPublishedProjects(collectionApi)
       .sort((a, b) => (a.data.order ?? 999) - (b.data.order ?? 999));
+  });
+
+  eleventyConfig.addCollection("recentProjects", (collectionApi) => {
+    return getPublishedProjects(collectionApi).sort((a, b) => b.date - a.date);
   });
 
   return {

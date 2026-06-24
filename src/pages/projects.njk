@@ -7,19 +7,31 @@ permalink: /projects/
 <section class="listing" aria-labelledby="projects-heading">
   <h1 id="projects-heading">Projects</h1>
   <p class="listing-intro">Selected project notes and build artifacts around retrieval, agents, recommendation systems, backend ML, and applied deep learning.</p>
-  <div class="project-grid">
-    {% for project in collections.projects %}
-      <a class="project-card" href="{{ project.url }}" aria-label="{{ project.data.title }} project">
-        <h2>{{ project.data.title }}</h2>
-        <p>{{ project.data.description }}</p>
-        {% if project.data.tags and project.data.tags.length %}
-          <div class="tag-row">
-            {% for tag in project.data.tags %}
-              <span class="tag">{{ tag }}</span>
-            {% endfor %}
-          </div>
-        {% endif %}
-      </a>
+  <ul class="project-list">
+    {% for project in collections.recentProjects %}
+      <li class="project-row">
+        <div class="project-row__main">
+          <h2 class="project-row__heading">
+            <a class="project-row__title" href="{{ project.url }}">{{ project.data.title }}</a>
+          </h2>
+          <p class="project-row__byline">
+            <span>Project</span>
+            <span aria-hidden="true">/</span>
+            <time datetime="{{ project.date | dateISO }}">{{ project.date | dateDisplay }}</time>
+          </p>
+          {% if project.data.description %}
+            <p class="project-row__description">{{ project.data.description }}</p>
+          {% endif %}
+          {% if project.data.tags and project.data.tags.length %}
+            <div class="project-row__tags" aria-label="Project technologies">
+              {% for tag in project.data.tags %}
+                <span class="tag-pill">{{ tag }}</span>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+        <a class="project-row__action" href="{{ project.url }}" aria-label="View {{ project.data.title }}">View</a>
+      </li>
     {% endfor %}
-  </div>
+  </ul>
 </section>
