@@ -8,13 +8,31 @@ html {
 }
 
 body {
+  position: relative;
   margin: 0;
   color: var(--color-text);
-  background: var(--color-bg);
+  background:
+    radial-gradient(circle at 14% 5%, color-mix(in srgb, var(--color-link) 18%, transparent) 0 22rem, transparent 42rem),
+    radial-gradient(circle at 92% 18%, color-mix(in srgb, #8b6f47 18%, transparent) 0 18rem, transparent 40rem),
+    linear-gradient(180deg, var(--color-bg), color-mix(in srgb, var(--color-bg) 92%, var(--color-subtle)));
   font-family: var(--font-sans);
   font-size: 16px;
   line-height: 1.62;
   text-rendering: optimizeLegibility;
+  font-variant-numeric: tabular-nums;
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  opacity: 0.18;
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--color-border) 36%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--color-border) 36%, transparent) 1px, transparent 1px);
+  background-size: 42px 42px;
 }
 
 a {
@@ -28,6 +46,12 @@ a:focus-visible {
   text-decoration: underline;
 }
 
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-link);
+  outline-offset: 4px;
+}
+
 p,
 h1,
 h2,
@@ -39,6 +63,7 @@ h1,
 h2,
 h3 {
   color: var(--color-text);
+  text-wrap: balance;
 }
 
 ul {
@@ -57,6 +82,7 @@ button {
 .prose {
   color: var(--color-text);
   font-size: 1rem;
+  max-width: var(--article-measure);
 }
 
 .prose > * + * {

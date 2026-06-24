@@ -1,5 +1,5 @@
 .page {
-  padding: 3.2rem 0 4.5rem;
+  padding: 5.2rem 0 6rem;
 }
 
 section {
@@ -7,19 +7,45 @@ section {
 }
 
 section + section {
-  margin-top: 3rem;
+  margin-top: 4.8rem;
 }
 
 .bio-grid {
   display: grid;
-  grid-template-columns: 180px 1fr;
-  gap: 2rem;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 3.8rem;
   align-items: start;
+}
+
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--color-border) 82%, transparent);
+  border-radius: var(--radius-lg);
+  padding: 2.2rem;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--color-surface-strong) 84%, transparent), color-mix(in srgb, var(--color-surface) 68%, transparent)),
+    radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--color-link) 12%, transparent), transparent 18rem);
+  box-shadow: var(--shadow-lift);
+}
+
+.hero-section::after {
+  position: absolute;
+  right: -8rem;
+  bottom: -10rem;
+  width: 22rem;
+  height: 22rem;
+  border: 1px solid color-mix(in srgb, var(--color-border-strong) 72%, transparent);
+  border-radius: 50%;
+  content: "";
 }
 
 .bio-copy {
   color: var(--color-text);
-  font-size: 1rem;
+  max-width: 64ch;
+  padding-top: 3.15rem;
+  font-size: 1.15rem;
+  line-height: 1.72;
 }
 
 .bio-copy p + p {
@@ -28,15 +54,29 @@ section + section {
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 0.9rem;
+}
+
+.project-grid .project-card {
+  grid-column: span 6;
+}
+
+.project-grid .project-card:nth-child(1),
+.project-grid .project-card:nth-child(4) {
+  grid-column: span 7;
+}
+
+.project-grid .project-card:nth-child(2),
+.project-grid .project-card:nth-child(5) {
+  grid-column: span 5;
 }
 
 .listing h1,
 .article h1 {
   font-family: var(--font-serif);
-  font-size: 2.15rem;
-  line-height: 1;
+  font-size: 3rem;
+  line-height: 0.98;
 }
 
 .listing-intro {
@@ -46,7 +86,7 @@ section + section {
 }
 
 .article {
-  max-width: 68ch;
+  max-width: var(--article-measure);
 }
 
 .blog-listing {
@@ -55,8 +95,8 @@ section + section {
 
 .listing-header h1 {
   font-family: var(--font-serif);
-  font-size: 2.15rem;
-  line-height: 1;
+  font-size: 3rem;
+  line-height: 0.98;
 }
 
 .blog-subtitle {
@@ -93,6 +133,10 @@ section + section {
 }
 
 @media (max-width: 720px) {
+  .site-nav {
+    border-radius: var(--radius-md);
+  }
+
   .nav-inner {
     align-items: flex-start;
     flex-direction: column;
@@ -104,12 +148,16 @@ section + section {
   }
 
   .page {
-    padding-top: 2.35rem;
+    padding-top: 3.2rem;
   }
 
   .bio-grid {
     grid-template-columns: 1fr;
-    gap: 1.25rem;
+    gap: 1.35rem;
+  }
+
+  .hero-section {
+    padding: 1.1rem;
   }
 
   .profile-side {
@@ -121,7 +169,16 @@ section + section {
 
   .profile-name {
     margin-top: 0;
-    font-size: 2.15rem;
+    font-size: 2.35rem;
+  }
+
+  .profile-kicker {
+    margin-top: 0;
+  }
+
+  .bio-copy {
+    padding-top: 0;
+    font-size: 1.02rem;
   }
 
   .social-links {
@@ -144,6 +201,14 @@ section + section {
 
   .project-grid {
     grid-template-columns: 1fr;
+  }
+
+  .project-grid .project-card,
+  .project-grid .project-card:nth-child(1),
+  .project-grid .project-card:nth-child(2),
+  .project-grid .project-card:nth-child(4),
+  .project-grid .project-card:nth-child(5) {
+    grid-column: auto;
   }
 
   .skill-groups {
@@ -176,6 +241,10 @@ section + section {
   .page,
   .footer-inner {
     width: min(calc(100% - 1.35rem), var(--measure));
+  }
+
+  .site-nav {
+    width: min(calc(100% - 1rem), var(--measure));
   }
 
   .nav-links {

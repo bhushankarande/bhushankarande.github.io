@@ -3,8 +3,8 @@ layout: layouts/base.njk
 permalink: /
 bodyClass: home
 ---
-<section id="bio" aria-labelledby="bio-heading">
-  <h2 class="section-label" id="bio-heading">Short Bio</h2>
+<section class="hero-section" id="bio" aria-labelledby="bio-heading">
+  <h2 class="section-label" id="bio-heading">Short bio</h2>
   <div class="bio-grid">
     <div class="profile-side">
       {% if profile.photo %}
@@ -13,6 +13,7 @@ bodyClass: home
         <div class="profile-photo" aria-label="Profile photo placeholder">{{ profile.photoLabel }}</div>
       {% endif %}
       <div>
+        <p class="profile-kicker">Production AI systems</p>
         <h1 class="profile-name">{{ profile.name }}</h1>
         <p class="profile-title">{{ profile.title }}</p>
         <div class="social-links" aria-label="Social links">
@@ -29,12 +30,18 @@ bodyClass: home
       {% for paragraph in profile.bio %}
         <p>{{ paragraph }}</p>
       {% endfor %}
+      <div class="profile-focus" aria-label="Primary focus areas">
+        <span>Agentic AI</span>
+        <span>RAG systems</span>
+        <span>Recommendations</span>
+        <span>LLM orchestration</span>
+      </div>
     </div>
   </div>
 </section>
 
 <section id="skills" aria-labelledby="skills-heading">
-  <h2 class="section-label" id="skills-heading">Technical Skills</h2>
+  <h2 class="section-label" id="skills-heading">Technical skills</h2>
   <div class="skill-groups">
     {% for group in skills %}
       <article class="skill-group">
